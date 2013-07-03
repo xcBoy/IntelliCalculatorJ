@@ -3,7 +3,6 @@
  * and open the template in the editor.
  */
 package xcBoy.mathProjects.IntelliCalculatorJ.GUI;
-import javax.swing.*;
 
 /**
  *
@@ -131,7 +130,9 @@ public class MainFrame extends javax.swing.JFrame {
         }
         else
         {
-            new Register().setVisible(true);
+            Register register = new Register();
+            register.setVisible(true);
+            this.isGodModeAvailable = register.getIsGodModeReged();
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -163,14 +164,9 @@ public class MainFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
                MainFrame mf = new MainFrame();
                mf.setVisible(true);
                mf.jCheckBoxMenuItem2.setState(false);
-            }
-        });
     }
     protected boolean isGodMode = false;
     protected boolean isGodModeAvailable = false;

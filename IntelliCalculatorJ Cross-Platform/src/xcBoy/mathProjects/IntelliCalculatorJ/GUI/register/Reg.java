@@ -8,13 +8,28 @@ package xcBoy.mathProjects.IntelliCalculatorJ.GUI.register;
  *
  * @author zengchen
  */
+import java.util.Random;
 public class Reg {
-    int codeFromString = 0;
-    private Reg(){}
-    public Reg (String regCode) {
-       int hashCode = regCode.hashCode();
+    public Reg(){
+        randomCode = Math.abs(random.nextInt());
     }
-    private boolean isOdd (int code) {
-        return false;
+    
+    Random random = new Random();
+    int randomCode = 0;
+    
+    public int getRandomCode(){
+        return randomCode;
+    }
+    
+    public int reGetRandomCode(){
+        randomCode = Math.abs(random.nextInt());
+        return randomCode;
+    }
+    
+    public boolean confirm(int confirmCode) {
+        if (this.randomCode + confirmCode == 990609)
+            return true;
+        else
+            return false;
     }
 }
